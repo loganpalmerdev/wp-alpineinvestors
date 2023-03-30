@@ -1,0 +1,128 @@
+.c-block-text-link {
+  margin-top: 60px;
+}
+
+.c-block-text-link__row {
+  display: flex;
+  margin: 0 -20px;
+}
+
+.c-block-text-link__col {
+  padding: 0 20px;
+  width: 50%;
+
+  p {
+    color: $color-black;
+    font-family: $font-sub-family;
+    font-size: 18px;
+    line-height: 1.67;
+  }
+}
+
+.c-block-text-link__col-inner {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
+}
+
+.c-block-text-link__title {
+  color: $color-gray-light;
+  font-size: 12px;
+  font-weight: $font-weight-semibold;
+  letter-spacing: 0.3px;
+  line-height: 1.67;
+  text-transform: uppercase;
+}
+
+.c-block-text-link__btn {
+  padding-bottom: 30px;
+  
+  a {
+    color: $color-blue;
+    display: block;
+    font-size: 24px;
+    letter-spacing: -1.2px;
+    padding-right: 60px;
+    position: relative;
+    text-transform: uppercase;
+
+    &:hover {
+      .c-block-text-link__btn-arrow {
+        svg {
+          transform: translate3d(0, 0, 0);
+        }
+      }
+    }
+  }
+}
+
+.c-block-text-link__btn-arrow {
+  cursor: pointer;
+  height: 27px;
+  overflow: hidden;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 50px;
+
+  svg {
+    transform: translate3d(-10px, 0, 0);
+    transition: 0.2s transform ease-out;
+  }
+}
+
+@media (max-width : 1180px) {
+  .c-block-text-link__row {
+    display: block;
+    margin: 0;
+  }
+
+  .c-block-text-link__col {
+    padding: 0;
+    width: 100%;
+  }
+
+  .c-block-text-link__col-inner {
+    display: block;
+  }
+  
+  .c-block-text-link__title {
+    margin-top: 20px;
+  }
+  
+  .c-block-text-link__btn {
+    margin-top: 20px;
+    padding-bottom: 0;
+  }
+}
+
+@media (max-width : $breakpoint-mobile-start) {
+  .c-block-text {
+    margin-top: 40px;
+  }  
+
+  .c-block-text-link__col {
+    p {
+      font-size: 12px;
+    }
+  }
+
+  .c-block-text-link__title {
+    font-size: 8px;
+    line-height: 1.5;
+  }
+  
+  .c-block-text-link__btn {
+    a {
+      font-size: 16px;
+      line-height: 1.25;
+      padding-right: 50px;
+    }
+  }
+
+  .c-block-text-link__btn-arrow {
+    height: 19px;
+    width: 38px;
+  }
+}

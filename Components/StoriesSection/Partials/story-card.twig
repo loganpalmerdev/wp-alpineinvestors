@@ -1,0 +1,40 @@
+<div class="stories-result-item jsStoriesResultItem">
+  <a href="{{ story.link }}" data-post-id="{{ story.id }}">
+    <div class="stories-result-item-inner">
+      <div class="story-image">
+        {% if story.template == 'portfolio-spotlight' %}
+          <img
+            src="{{ placeholderImage(278, 362) }}"
+            alt="background"
+          />
+          <div class="story-portfolio-image">
+            <div>
+              <img
+                class="lazyload"
+                src="{{ placeholderImage(story.meta('avatar').width, story.meta('avatar').height) }}"
+                data-src="{{ story.meta('avatar').src|resizeDynamic(story.meta('avatar').width / 2 ) }}"
+                data-srcset="{{ story.meta('avatar').src|resizeDynamic(story.meta('avatar').width / 2) }} 1x, {{ story.meta('avatar').src|resizeDynamic(story.meta('avatar').width) }} 2x"
+                data-sizes="auto"
+                alt="{{ story.meta('avatar').alt|e }}"
+              />
+            </div>
+          </div>
+        {% else %}
+          <img
+            class="lazyload"
+            src="{{ placeholderImage(278, 362) }}"
+            data-src="{{ story.meta('avatar').src|resizeDynamic(278, 362) }}"
+            data-srcset="{{ story.meta('avatar').src|resizeDynamic(278, 362) }} 1x, {{ story.meta('avatar').src|resizeDynamic(556, 724) }} 2x"
+            data-sizes="auto"
+            alt="{{ story.meta('avatar').alt|e }}"
+          />
+        {% endif %}
+      </div>
+      <div class="story-role">{{ story.role }}</div>
+      <div class="story-title">
+        <h3>{{ story.title }}</h3>
+      </div>
+      <div class="story-btn">Read Case Study</div>
+    </div>
+  </a>
+</div>

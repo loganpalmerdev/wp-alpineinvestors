@@ -1,0 +1,21 @@
+<section class="c-block-text-link">
+    <div class="container-outter">
+        <div class="container-wrapper">
+            <div class="container">
+                <div class="c-block-text-link__row">
+                    <div class="c-block-text-link__col">
+                        <p>{{ text|e('wp_kses_post') }}</p>
+                    </div>
+                    <div class="c-block-text-link__col">
+                        <div class="c-block-text-link__col-inner">
+                            <div class="c-block-text-link__title">{{ link_sub_title|e('wp_kses_post') }}</div>
+                            <div class="c-block-text-link__btn">
+                                <a href="{{ link.url }}">{{ link.title|e('wp_kses_post') }}<div class="c-block-text-link__btn-arrow"><svg viewBox="-245 368.2 120.4 57.8"><path fill="#00aada" d="M-124.6,397.4l-2.4,2.4v0.8h-0.8l-25.4,25.4l-4.2-4.2l21.2-21.2H-245v-6h109.8l-22.2-22.2l4.2-4.2l28.6,28.6l-0.3,0.3L-124.6,397.4z"/></svg></div></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

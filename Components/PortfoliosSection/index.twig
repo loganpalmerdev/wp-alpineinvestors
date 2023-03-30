@@ -1,0 +1,90 @@
+<section class="c-search">
+  <div class="container-outter">
+    <div class="container-wrapper">
+      <div class="container">
+        <div class="c-search__key-row hidden">
+          <div class="c-search__key jsProfileSearchKey">
+            <h2>Filter : <span>ALL</span></h2>
+            <div class="c-search__key-dots">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </div>
+        </div>
+        <div class="c-search__row">
+          <div class="c-search__filter-col jsProfileSearchFilterCol">
+            <div class="c-search__filter-close-btn jsProfileSearchFilterCloseBtn"></div>
+            <div class="c-search__filter-inner">
+              <div class="c-search__filter-header">
+                <div class="c-search__filter-title">
+                  <h2>FILTER</h2>
+                </div>
+                <div class="c-search__filter-reset-btn jsProfileSearchFilterResetBtn hidden">
+                  <button>CLEAR</button>
+                </div>
+              </div>
+              <div class="c-search__taxonomy-list">
+                <h3>BY STATUS:</h3>
+                <ul>
+                  <li>
+                    <label>ALL<input type="radio" class="jsPortfolioTerm" name="portfolio-status-term" value="-1" checked><span class="checkmark"></span></label>
+                  </li>
+                  {% for term in portfolio_status_terms %}
+                    <li>
+                      <label>{{ term.name }}<input type="radio" class="jsPortfolioTerm" name="portfolio-status-term" value="ps{{ term.id }}"><span class="checkmark"></span></label>
+                    </li>
+                  {% endfor %}
+                </ul>
+              </div>
+              <div class="c-search__taxonomy-list">
+                <h3>BY INDUSTRY:</h3>
+                <ul>
+                  <li>
+                    <label>ALL<input type="radio" class="jsPortfolioTerm" name="portfolio-industry-term" value="-1" checked><span class="checkmark"></span></label>
+                  </li>
+                  {% for term in portfolio_industry_terms %}
+                    <li>
+                      <label>{{ term.name }}<input type="radio" class="jsPortfolioTerm" name="portfolio-industry-term" value="pi{{ term.id }}"><span class="checkmark"></span></label>
+                    </li>
+                  {% endfor %}
+                </ul>
+              </div>
+              <div class="c-search__taxonomy-list">
+                <h3>BY VERTICALS:</h3>
+                <ul>
+                  <li>
+                    <label>ALL<input type="radio" class="jsPortfolioTerm" name="portfolio-vertical-term" value="-1" checked><span class="checkmark"></span></label>
+                  </li>
+                  {% for term in portfolio_vertical_terms %}
+                    <li>
+                      <label>{{ term.name }}<input type="radio" class="jsPortfolioTerm" name="portfolio-vertical-term" value="pv{{ term.id }}"><span class="checkmark"></span></label>
+                    </li>
+                  {% endfor %}
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="c-search__result-col">
+            <div class="c-search__portfolio-row jsSearchPortfolioRow">
+              {% for portfolio in portfolios %}
+                {% include 'Partials/portfolio-card.twig' ignore missing with {portfolio: portfolio} only %}
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+        <div class="c-portfolio-search__footer">
+          <div class="c-portfolio-search__footer-inner">
+            {{ footer_content|e('wp_kses_post') }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="c-search__load_spinner hide"></div>
+<div class="c-search__portfolio-backup">
+  {% for portfolio in portfolios %}
+    {% include 'Partials/portfolio-card.twig' ignore missing with {portfolio: portfolio} only %}
+  {% endfor %}
+</div>

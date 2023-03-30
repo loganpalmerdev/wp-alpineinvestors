@@ -1,0 +1,25 @@
+<div class="c-update-card jsSearchUpdateItem {{ update.class }}">
+  <a href="{{ update.post.link }}" data-post-id="{{ update.post.id }}">
+    <div class="c-update-card__row">
+      <div class="c-upate-card__img">
+        <img
+          class="lazyload"
+          src="{{ placeholderImage(270, 160) }}"
+          data-src="{{ update.post.thumbnail.src|resizeDynamic(270, 160) }}"
+          data-sizes="auto"
+          alt="{{ update.post.thumbnail.alt|e }}"
+        />
+      </div>
+      <div class="c-upate-card__info">
+        <div class="c-upate-card__title">
+          <h2>{{ update.post.title|e('wp_kses_post') }}</h2>
+        </div>
+        <div class="c-upate-card__date">
+          <div class="c-upate-card__date-t">{{ update.post.date|date("m/d") }}</div>
+          <div class="c-upate-card__date-b">{{ update.post.date|date("Y") }}</div>
+          <div class="c-upate-card__date-m">{{ update.post.date|date("m/d/Y") }}</div>
+        </div>
+      </div>
+    </div>
+  </a>
+</div>

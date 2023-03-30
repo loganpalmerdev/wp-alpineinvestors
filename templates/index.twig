@@ -1,0 +1,7 @@
+{% extends contentOnly ? 'templates/_contentOnly.twig' : 'templates/_document.twig' %}
+
+{% block content %}
+  {% for component in post.meta('pageComponents') %}
+    {{ renderComponent(component) }}
+  {% endfor %}
+{% endblock %}

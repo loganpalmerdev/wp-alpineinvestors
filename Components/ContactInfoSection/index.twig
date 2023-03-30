@@ -1,0 +1,49 @@
+<div class="c-contact-info">
+    <div class="container-outter">
+        <div class="container-wrapper">
+            <div class="container">
+                <div class="c-contact-info__row">
+                    <div class="c-contact-info__left">
+                        {% for item in contact_emails %}
+                            <div class="c-contact-info__card">
+                                <div class="c-contact-info__card-des">{{ item.description }}</div>
+                                <div class="c-contact-info__card-val"><a href="mailto:{{ item.email }}">{{ item.email }}</a></div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                    <div class="c-contact-info__right">
+                        <div class="c-contact-info__card">
+                            <div class="c-contact-info__card-des">address:</div>
+                            <div class="c-contact-info__card-val"><a href="{{ google_map_link }}">{{ address }}</a></div>
+                        </div>
+                        <div class="c-contact-info__card">
+                            <div class="c-contact-info__card-des">phone:</div>
+                            <div class="c-contact-info__card-val"><a href="tel:{{ phone }}">{{ phone }}</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="c-map-row" id="jsMapRow">
+                {{ googleMapsApiKey }}
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+function initMap() {
+    const uluru = { lat: 37.7931579, lng: -122.3991865 };
+    const map = new google.maps.Map(document.getElementById("jsMapRow"), {
+        zoom: 16,
+        center: uluru,
+        zoomControl: false,
+        mapTypeControl: false,
+        streetViewControl: false,
+        fullscreenControl: false
+    });
+    const marker = new google.maps.Marker({
+        position: uluru,
+        map: map,
+    });
+}
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key={{ googleMapsApiKey }}&callback=initMap&libraries=&v=weekly" async></script>

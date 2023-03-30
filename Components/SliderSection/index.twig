@@ -1,0 +1,61 @@
+<section id="{{ section_id }}" class="c-slider">
+  <div class="container-outter">
+    <div class="container-wrapper">
+      <div class="container">
+        <div class="c-slider__title">
+          <h2>{{ title }}</h2>
+        </div>
+        {% if sliders|length > 1 %}
+          <div class="c-slider__row swiper-container" is="flynt-slider-row">
+            <div class="swiper-wrapper">
+              {% for slider in sliders %}
+                <div class="c-slider__item swiper-slide">
+                  <div class="c-slider__item-row">
+                    <div class="c-slider__item-image">
+                      <img
+                        class="lazyload"
+                        src="{{ placeholderImage(1200, 760) }}"
+                        data-src="{{ slider.image.src|resizeDynamic(1200) }}"
+                        data-sizes="auto"
+                        alt="{{ slider.image.alt|e }}"
+                      />
+                    </div>
+                    <div class="c-slider__item-content">{{ slider.content|e('wp_kses_post') }}</div>
+                  </div>
+                </div>
+              {% endfor %}
+            </div>
+            <div class="c-slider__info">
+              <div class="c-slider__button-next">
+                <svg viewBox="-490 736.4 120.4 57.8"><path d="M-490,765l2.4-2.4v-0.8h0.8l25.4-25.4l4.2,4.2l-21.2,21.2h108.8v6h-109.8l22.2,22.2l-4.2,4.2l-28.6-28.6l0.3-0.3L-490,765z"/></svg>
+              </div>
+              <div class="c-slider__pagination"></div>
+              <div class="c-slider__button-prev">
+                <svg viewBox="-245 368.2 120.4 57.8"><path d="M-124.6,397.4l-2.4,2.4v0.8h-0.8l-25.4,25.4l-4.2-4.2l21.2-21.2H-245v-6h109.8l-22.2-22.2l4.2-4.2l28.6,28.6l-0.3,0.3L-124.6,397.4z"/></svg>
+              </div>
+            </div>
+          </div>
+        {% else %}
+          <div class="c-slider__row">
+            {% for slider in sliders %}
+              <div class="c-slider__item">
+                <div class="c-slider__item-row">
+                  <div class="c-slider__item-image">
+                    <img
+                      class="lazyload"
+                      src="{{ placeholderImage(1200, 760) }}"
+                      data-src="{{ slider.image.src|resizeDynamic(1200) }}"
+                      data-sizes="auto"
+                      alt="{{ slider.image.alt|e }}"
+                    />
+                  </div>
+                  <div class="c-slider__item-content">{{ slider.content|e('wp_kses_post') }}</div>
+                </div>
+              </div>
+            {% endfor %}
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</section>

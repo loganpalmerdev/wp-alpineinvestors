@@ -1,0 +1,53 @@
+.c-block-content {
+  margin-top: 60px;
+
+  h2 {
+    color: $color-black;
+    font-family: $font-sub-family;
+    font-size: 18px;
+    font-weight: $font-weight-bold;
+    line-height: 1.67;
+  }
+
+  p {
+    color: $color-black;
+    font-family: $font-sub-family;
+    font-size: 18px;
+    line-height: 1.67;
+  }
+
+  a {
+    color: $color-blue;
+  }
+
+  *~h2 {
+    margin-top: 30px;
+  }
+
+  *~p {
+    margin-top: 30px;
+  }
+}
+
+@media (max-width : $breakpoint-mobile-start) {
+  .c-block-content {
+    margin-top: 30px;
+
+    h2 {
+      font-size: 12px;
+    }
+  
+    p {
+      font-size: 12px;
+    }
+  
+  
+    *~h2 {
+      margin-top: 15px;
+    }
+  
+    *~p {
+      margin-top: 15px;
+    }
+  }
+}

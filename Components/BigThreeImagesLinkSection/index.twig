@@ -1,0 +1,68 @@
+<section class="c-big-three-images-link">
+    <div class="c-big-three-images-link__item c-big-three-images-link__item-1">
+        <a href="{{ link_1.url }}">
+            <div class="c-big-three-images-link__item__image">
+                <img
+                    class="lazyload"
+                    src="{{ placeholderImage(image_1.width, image_1.height) }}"
+                    data-src="{{ image_1.src|resizeDynamic(image_1.width) }}"
+                    data-sizes="auto"
+                    alt="{{ image_1.alt|e }}"
+                />
+            </div>
+            <div class="c-big-three-images-link__item__title">
+                <h2>{{ title_1|e('wp_kses_post') }}</h2>
+            </div>
+            <div class="c-big-three-images-link__item__content">
+                <p>{{ content_1|e('wp_kses_post') }}</p>
+                <div class="c-big-three-images-link__item__link">
+                    <span>{{ link_1.title|e('wp_kses_post') }}</span>
+                </div>
+            </div>
+        </a>
+    </div>
+    <div class="c-big-three-images-link__item c-big-three-images-link__item-2">
+        <a href="{{ link_2.url }}">
+            <div class="c-big-three-images-link__item__image">
+                <img
+                    class="lazyload"
+                    src="{{ placeholderImage(image_2.width, image_2.height) }}"
+                    data-src="{{ image_2.src|resizeDynamic(image_2.width) }}"
+                    data-sizes="auto"
+                    alt="{{ image_2.alt|e }}"
+                />
+            </div>
+            <div class="c-big-three-images-link__item__title">
+                <h2>{{ title_2|e('wp_kses_post') }}</h2>
+            </div>
+            <div class="c-big-three-images-link__item__content">
+                <p>{{ content_2|e('wp_kses_post') }}</p>
+                <div class="c-big-three-images-link__item__link">
+                    <span>{{ link_2.title|e('wp_kses_post') }}</span>
+                </div>
+            </div>
+        </a>
+    </div>
+    <div class="c-big-three-images-link__item c-big-three-images-link__item-3">
+        <a href="{{ link_3.url }}">
+            <div class="c-big-three-images-link__item__image">
+                <img
+                    class="lazyload"
+                    src="{{ placeholderImage(image_3.width, image_3.height) }}"
+                    data-src="{{ image_3.src|resizeDynamic(image_3.width) }}"
+                    data-sizes="auto"
+                    alt="{{ image_3.alt|e }}"
+                />
+            </div>
+            <div class="c-big-three-images-link__item__title">
+                <h2>{{ title_3|e('wp_kses_post') }}</h2>
+            </div>
+            <div class="c-big-three-images-link__item__content">
+                <p>{{ content_3|e('wp_kses_post') }}</p>
+                <div class="c-big-three-images-link__item__link">
+                    <span>{{ link_3.title|e('wp_kses_post') }}</span>
+                </div>
+            </div>
+        </a>
+    </div>
+</section>

@@ -1,0 +1,142 @@
+.c-single-update {
+  background-color: $color-black;
+  padding: 80px 0;
+}
+
+.c-single-update__inner {
+  border-bottom: 2px solid rgba($color-white, 0.1);
+  border-top: 2px solid rgba($color-white, 0.1);
+  padding: 70px 0;
+}
+
+.c-single-update__row {
+  display: flex;
+
+  &:hover {
+    .c-single-update__thumbnail {
+      img {
+        filter: grayscale(0);
+      }
+    }
+    
+    .c-single-update__title {
+      h2 {
+        color: $color-blue;
+      }
+    }
+  }
+}
+
+.c-single-update__info-col {
+  align-items: center;
+  display: flex;
+  flex: 1;
+  padding-left: 100px;
+}
+
+.c-single-update__date {
+  color: $color-gray-dark;
+  font-size: 36px;
+  font-weight: $font-weight-semibold;
+  letter-spacing: -1.8px;
+  line-height: 40px;
+}
+
+.c-single-update__year,
+.c-single-update__caption {
+  color: $color-gray-dark;
+  font-size: 12px;
+  font-weight: $font-weight-semibold;
+  letter-spacing: 0.3px;
+  line-height: 20px;
+  text-transform: uppercase;
+}
+
+.c-single-update__thumbnail {
+  img {
+    filter: grayscale(1);
+    transition: 0.2s filter ease-out;
+  }
+}
+
+.c-single-update__title {
+  flex: 1;
+  padding-left: 35px;
+
+  h2 {
+    color: $color-white;
+    font-size: 36px;
+    font-weight: $font-weight-normal;
+    letter-spacing: -1.8px;
+    line-height: 40px;
+    text-transform: uppercase;
+    transition: 0.2s color ease-out;
+  }
+}
+
+.c-single-update__meta-mobile {
+  display: none;
+  justify-content: center;
+  margin-top: 25px;
+}
+
+.c-single-update__meta-mobile__date {
+  color: $color-white;
+  font-size: 8px;
+  font-weight: $font-weight-semibold;
+  letter-spacing: 0.2px;
+  line-height: 1;
+}
+
+.c-single-update__meta-mobile__caption {
+  color: $color-gray-dark;
+  font-size: 8px;
+  font-weight: $font-weight-semibold;
+  letter-spacing: 0.2px;
+  line-height: 1;
+  padding-left: 10px;
+  text-transform: uppercase;
+}
+
+@media (max-width : $breakpoint-mobile-start) {
+  .c-single-update {
+    padding: 40px 0;
+  }
+  
+  .c-single-update__inner {
+    padding: 25px 0;
+  }
+  
+  .c-single-update__row {
+    display: block;
+  }
+  
+  .c-single-update__meta-col {
+    display: none;
+  }
+  
+  .c-single-update__info-col {
+    display: block;
+    padding-left: 0;
+  }
+
+  .c-single-update__thumbnail {
+    text-align: center;
+  }
+  
+  .c-single-update__title {
+    margin-top: 25px;
+    padding-left: 0;
+    text-align: center;
+  
+    h2 {
+      font-size: 16px;
+      letter-spacing: -0.4px;
+      line-height: 20px;
+    }
+  }
+
+  .c-single-update__meta-mobile {
+    display: flex;
+  }
+}

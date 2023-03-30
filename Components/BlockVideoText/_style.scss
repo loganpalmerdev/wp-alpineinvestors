@@ -1,0 +1,156 @@
+.c-block-video-text {
+  margin-top: 80px;
+}
+
+.c-block-video-text__row {
+  display: flex;
+  flex-direction: row-reverse;
+  margin: 0 -20px;
+}
+
+.c-block-video-text__col {
+  padding: 0 20px;
+  width: 50%;
+
+  p {
+    color: $color-black;
+    font-family: $font-sub-family;
+    font-size: 18px;
+    line-height: 1.67;
+  }
+}
+
+.c-block-video-text__image {
+  cursor: pointer;
+  position: relative;
+
+  &:hover {
+    img {
+      filter: grayscale(0);
+    }
+
+    .c-block-video-text__image-btn {
+      transform: translate(-50%, -50%) scale(1.1, 1.1);
+    }
+  }
+
+  img {
+    filter: grayscale(1);
+    transition: 0.2s filter ease-out;
+    width: 100%;
+  }
+}
+
+.c-block-video-text__image-btn {
+  height: 80px;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transition: 0.2s transform ease-out;
+  width: 80px;
+  z-index: 1;
+
+  svg {
+    height: 100%;
+    width: 100%;
+  }
+}
+
+.c-block-video-text-popup {
+  background-color: rgba($color-black, 0.98);
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 999999;
+}
+
+.c-block-video-text-popup__close-btn {
+  cursor: pointer;
+  height: 35px;
+  position: absolute;
+  right: 40px;
+  top: 40px;
+  width: 35px;
+
+  &:hover {
+    &::before,
+    &::after {
+      width: 35px;
+    }
+  }
+
+  &::before,
+  &::after {
+    background: $color-white;
+    content: '';
+    height: 2px;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transition: 0.2s width ease-out;
+    width: 30px;
+  }
+
+  &::before {
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+
+  &::after {
+    transform: translate(-50%, -50%) rotate(-45deg);
+  }
+}
+
+.c-block-video-text-popup__video {
+  background-color: #000;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 79.72972973%;
+}
+
+.jsBlockVideoTextPopupVideoWrapper {
+  height: 0;
+  overflow: hidden;
+  padding-bottom: 56.25%;
+  position: relative;
+
+  iframe {
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+}
+
+.jsBlockVideoTextHidden {
+  display: none;
+}
+
+@media (max-width : $breakpoint-mobile-start) {
+  .c-block-video-text {
+    margin-top: 60px;
+  }
+
+  .c-block-video-text__row {
+    display: block;
+    margin: 0;
+  }
+
+  .c-block-video-text__col {
+    padding: 0;
+    width: 100%;
+
+    p {
+      font-size: 12px;
+    }
+  }
+
+  .c-block-video-text__col+.c-block-video-text__col {
+    margin-top: 35px;
+  }
+}

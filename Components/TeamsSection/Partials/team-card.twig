@@ -1,0 +1,22 @@
+<div class="c-search__team-item jsSearchTeamItem {{ team.class }}">
+    <a href="{{ team.post.link }}" data-post-id="{{ team.post.id }}">
+        <div class="c-search__team-item-inner">
+            <div class="c-search__team-avatar">
+                <img
+                    class="lazyload"
+                    src="{{ placeholderImage(278, 362) }}"
+                    data-src="{{ team.post.meta('avatar_1').src|resizeDynamic(278, 362) }}"
+                    data-srcset="{{ team.post.meta('avatar_1').src|resizeDynamic(278, 362) }} 1x, {{ team.post.meta('avatar_1').src|resizeDynamic(556, 724) }} 2x"
+                    data-sizes="auto"
+                    alt="{{ team.post.meta('avatar_1').alt|e }}"
+                />
+            </div>
+            <div class="c-search__team-name">
+                <h2>{{ team.post.display_name }}</h2>
+            </div>
+            <div class="c-search__team-role">
+                <h3>{{ team.post.role }}</h3>
+            </div>
+        </div>
+    </a>
+</div>

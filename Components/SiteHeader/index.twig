@@ -1,0 +1,68 @@
+<header class="{% if post.header_menu_open %} header-normal {% endif %}">
+  <div class="wide-container">
+    <div class="header-logo">
+      <a href="{{ site.link }}"><img src="{{ logo.src }}" alt="{{ logo.alt }}"></a>
+    </div>
+    <div class="header-menu-btn {% if post.header_menu_open %} header-normal {% endif %}">
+      <div class="header-menu-btn-hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div class="header-menu-btn-text">MENU</div>
+    </div>
+  </div>
+</header>
+<section class="header-menu-section {% if post.header_menu_open %} header-normal {% endif %}">
+  <div class="wide-container">
+    <div class="header-nav-row">
+      <nav class="header-left-nav">
+        <ul>
+          {% for item in left_menu.items %}
+            <li class="{{ item.classes | join(' ') }}">
+              <a href="{{ item.link }}">{{ item.title }}.</a>
+              <span>{{ item.description }}</span>
+            </li>
+          {% endfor %}
+        </ul>
+      </nav>
+      <nav class="header-right-nav">
+        <ul>
+          {% for item in right_menu.items %}
+            <li class="{{ item.classes | join(' ') }}">
+              <a href="{{ item.link }}">{{ item.title }}</a>
+            </li>
+          {% endfor %}
+        </ul>
+      </nav>
+    </div>
+    <div class="header-bottom">
+      <div class="header-bottom-address">
+        <a href="{{ address_google_map_url }}" target="_blank">
+          <div>
+            <span>{{ address }},</span>
+          </div>
+          <div>
+            <span>{{ city }}</span>
+          </div>
+          <div>
+            <span>{{ state }}</span>
+          </div>
+          <div>
+            <span>{{ zip }}</span>
+          </div>
+        </a>
+      </div>
+      <nav class="header-bottom-menu">
+        {% for item in bottom_menu.items %}
+          <div class="{{ item.classes | join(' ') }}">
+            <a href="{{ item.link }}">{{ item.title }}</a>
+          </div>
+        {% endfor %}
+      </nav>
+      <div class="header-bottom-copyright">
+        <p>ALPINE INVESTORS COPYRIGHT {{ year }}, ALL RIGHTS RESERVED</p>
+      </div>
+    </div>
+  </div>
+</section>

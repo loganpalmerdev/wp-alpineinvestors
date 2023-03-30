@@ -1,0 +1,98 @@
+<section class="c-search">
+  <div class="container-outter">
+    <div class="container-wrapper">
+      <div class="container">
+        <div class="c-search-team__tab-row">
+          <div class="c-search-team__tab-inner">
+            <div class="c-search-team__tab-list">
+              <div class="c-search-team__tab-item active" data-value="alpine-team">Alpine Team</div>
+              <div class="c-search-team__tab-item" data-value="portfolio-leaders">Portfolio leaders</div>
+            </div>
+          </div>
+        </div>
+        <div class="c-search__key-row hidden jsTeamsSearchKeyRow jsAlpineTeamsSearch">
+          <div class="c-search__key jsTeamsSearchKey">
+            <h2>Filter : <span>ALL</span></h2>
+            <div class="c-search__key-dots">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </div>
+        </div>
+        <div class="c-search__row jsAlpineTeamsSearch">
+          <div class="c-search__filter-col jsTeamsSearchFilterCol">
+            <div class="c-search__filter-close-btn jsTeamsSearchFilterCloseBtn"></div>
+            <div class="c-search__filter-inner">
+              <div class="c-search__filter-header">
+                <div class="c-search__filter-title">
+                  <h2>FILTER</h2>
+                </div>
+                <div class="c-search__filter-reset-btn hidden jsTeamsSearchFilterResetBtn">
+                  <button>CLEAR</button>
+                </div>
+              </div>
+              <div class="c-search__taxonomy-list">
+                <h3>BY INDUSTRY:</h3>
+                <ul>
+                  <li>
+                    <label>ALL<input type="radio" name="team-industry-term" value="-1" checked><span class="checkmark"></span></label>
+                  </li>
+                  {% for term in team_industry_terms %}
+                    <li>
+                      <label>{{ term.name }}<input type="radio" name="team-industry-term" value="{{ term.id }}"><span class="checkmark"></span></label>
+                    </li>
+                  {% endfor %}
+                </ul>
+              </div>
+              <div class="c-search__taxonomy-list">
+                <h3>BY FUNCTION:</h3>
+                <ul>
+                  <li>
+                    <label>ALL<input type="radio" name="team-function-term" value="-1" checked><span class="checkmark"></span></label>
+                  </li>
+                  {% for term in team_function_terms %}
+                    <li>
+                      <label>{{ term.name }}<input type="radio" name="team-function-term" value="{{ term.id }}"><span class="checkmark"></span></label>
+                    </li>
+                  {% endfor %}
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="c-search__result-col">
+            <div class="c-search__team-row jsSearchAplineTeamRow">
+              {% for team in alpine_teams %}
+                {% include 'Partials/team-card.twig' ignore missing with {team: team} only %}
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+        <div class="c-search__row jsPortfolioLeadersSearch" style="display: none;">
+          <div class="c-search__filter-col"></div>
+          <div class="c-search__result-col">
+            <div class="c-search__team-row">
+              {% for leader in portfolio_leaders %}
+                {% include 'Partials/team-card.twig' ignore missing with {team: leader} only %}
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="c-search__load-spinner hide jsTeamsSearchLoadSpinner"></div>
+<div class="c-search__popup jsTeamsSearchPopup" data-nonce="{{ get_single_team_nonce }}" {% if is_single_team %} data-is-single-team="yes" {% endif %}>
+  <div class="c-search__popup-mask c-search__popup-mask--transparent"></div>
+  <div class="c-search__single__popup-wrapper c-search__single__popup-wrapper--small jsTeamsSearchSinglePopupWrapper">
+    <div class="c-search__single__popup-close-btn c-search__single__popup-close-btn--blue jsTeamsSearchSinglePopupCloseBtn" data-current-page-url="{{ teams_page_url }}"></div>
+    <div class="c-search__single__popup-content c-search__single__popup-content--black jsTeamsSearchSinglePopupContent">
+      <div class="c-search__single__popup-content-inner c-search__single__popup-content-inner--black jsSingleTeamPopupContentInner">
+        {% if is_single_team %}
+          {% include 'Partials/single-team-template.twig' ignore missing with {is_single_team: is_single_team, post: post} only %}
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>

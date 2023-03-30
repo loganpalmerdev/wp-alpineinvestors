@@ -1,0 +1,50 @@
+<div class="c-single-story-nav__item">
+  <a href="{{ story.link }}" data-post-id="{{ story.id }}">
+    <div class="c-single-story-nav__item-inner">
+      <div class="c-single-story-nav__item-inner__row">
+        <div class="c-single-story-nav__item-inner__left">
+          <div class="c-single-story-nav__item__image">
+            {% if story.template == 'portfolio-spotlight' %}
+              <img
+                src="{{ placeholderImage(280, 360) }}"
+                alt="background"
+              />
+              <div class="c-single-story-nav__item__image-portfolio">
+                <div>
+                  <img
+                    class="lazyload"
+                    src="{{ placeholderImage(story.meta('avatar').width, story.meta('avatar').height) }}"
+                    data-src="{{ story.meta('avatar').src|resizeDynamic(story.meta('avatar').width / 2 ) }}"
+                    data-srcset="{{ story.meta('avatar').src|resizeDynamic(story.meta('avatar').width / 2) }} 1x, {{ story.meta('avatar').src|resizeDynamic(story.meta('avatar').width) }} 2x"
+                    data-sizes="auto"
+                    alt="{{ story.meta('avatar').alt|e }}"
+                  />
+                </div>
+              </div>
+            {% else %}
+              <img
+                class="lazyload"
+                src="{{ placeholderImage(280, 360) }}"
+                data-src="{{ story.meta('avatar').src|resizeDynamic(280, 360) }}"
+                data-srcset="{{ story.meta('avatar').src|resizeDynamic(280, 360) }} 1x, {{ story.meta('avatar').src|resizeDynamic(560, 720) }} 2x"
+                data-sizes="auto"
+                alt="{{ story.meta('avatar').alt|e }}"
+              />
+            {% endif %}
+          </div>
+        </div>
+        <div class="c-single-story-nav__item-inner__right">
+          <div class="c-single-story-nav__item-inner__right-top">
+            <div class="c-single-story-nav__item__role">{{ story.meta('role') }}</div>
+            <div class="c-single-story-nav__item__title">
+              <h3>{{ story.title }}</h3>
+            </div>
+          </div>
+          <div class="c-single-story-nav__item-inner__right-bottom">
+            <div class="c-single-story-nav__item__btn">Read case study</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </a>
+</div>

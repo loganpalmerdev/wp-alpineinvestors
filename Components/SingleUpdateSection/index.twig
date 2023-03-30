@@ -1,0 +1,39 @@
+<section class="c-single-update">
+    <div class="wide-container">
+        <div class="c-single-update__inner"> 
+            <a href="{{ selected_update.link }}">
+                <div class="c-single-update__row">
+                    <div class="c-single-update__meta-col">
+                        <div class="c-single-update__date">
+                            {{ selected_update.date|date("m/d") }}
+                        </div>
+                        <div class="c-single-update__year">
+                            {{ selected_update.date|date("Y") }}
+                        </div>
+                        <div class="c-single-update__caption">
+                            {{ selected_update.date_caption }}
+                        </div>
+                    </div>
+                    <div class="c-single-update__info-col">
+                        <div class="c-single-update__thumbnail">
+                            <img
+                                class="lazyload"
+                                src="{{ placeholderImage(265, selected_update.thumbnail.height / selected_update.thumbnail.width * 265) }}"
+                                data-src="{{ selected_update.thumbnail.src|resizeDynamic(265) }}"
+                                data-sizes="auto"
+                                alt="{{ selected_update.thumbnail.alt|e }}"
+                            />
+                        </div>
+                        <div class="c-single-update__title">
+                            <h2>{{ selected_update.title }}</h2>
+                        </div>
+                        <div class="c-single-update__meta-mobile">
+                            <div class="c-single-update__meta-mobile__date">{{ selected_update.date|date("m/d/Y") }}</div>
+                            <div class="c-single-update__meta-mobile__caption">{{ selected_update.date_caption }}</div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+</section>

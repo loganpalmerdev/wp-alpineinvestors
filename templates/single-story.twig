@@ -1,0 +1,6 @@
+{% extends 'templates/_document.twig' %}
+
+{% block content %}
+    {{ renderComponent('BlockHeroText', {'title': hero_title,'sub_title': hero_sub_title, 'content': hero_content}) }}
+    {{ renderComponent('StoriesSection', {'is_single_story': true, 'stories_page': stories_page}) }}
+{% endblock %}

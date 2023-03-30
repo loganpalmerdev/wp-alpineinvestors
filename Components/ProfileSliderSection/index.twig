@@ -1,0 +1,90 @@
+<section class="c-profile-slider">
+  <div class="container-outter">
+    <div class="container-wrapper">
+      <div class="container">
+        <div class="c-profile-slider-mobile" is="flynt-profile-slider-mobile">
+          <div class="swiper-container">
+            <div class="swiper-wrapper">
+              {% for slider in sliders %}
+                <div class="c-profile-slider-mobile__row swiper-slide">
+                  <div class="c-profile-slider-mobile__image">
+                    <div class="c-profile-slider-mobile__image-row">
+                      <div class="c-profile-slider-mobile__image-image">
+                        <img
+                          class="lazyload"
+                          src="{{ placeholderImage(650, 830) }}"
+                          data-src="{{ slider.image.src|resizeDynamic(650, 830) }}"
+                          data-sizes="auto"
+                          alt="{{ slider.image.alt|e }}"
+                        />
+                      </div>
+                      <div class="c-profile-slider-mobile__image-content">
+                        <h3>{{ slider.title|e('wp_kses_post') }}</h3>
+                        <h2>{{ slider.name|e('wp_kses_post') }}</h2>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="c-profile-slider-mobile__content">
+                    {{ slider.content|e('wp_kses_post') }}
+                  </div>
+                </div>
+              {% endfor %}
+            </div>
+            <div class="c-profile-slider__info">
+              <div class="c-profile-slider__button-next">
+                <svg viewBox="-490 736.4 120.4 57.8"><path d="M-490,765l2.4-2.4v-0.8h0.8l25.4-25.4l4.2,4.2l-21.2,21.2h108.8v6h-109.8l22.2,22.2l-4.2,4.2l-28.6-28.6l0.3-0.3L-490,765z"/></svg>
+              </div>
+              <div class="c-profile-slider__pagination"></div>
+              <div class="c-profile-slider__button-prev">
+                <svg viewBox="-245 368.2 120.4 57.8"><path d="M-124.6,397.4l-2.4,2.4v0.8h-0.8l-25.4,25.4l-4.2-4.2l21.2-21.2H-245v-6h109.8l-22.2-22.2l4.2-4.2l28.6,28.6l-0.3,0.3L-124.6,397.4z"/></svg>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="c-profile-slider__row" is="flynt-profile-slider">
+          <div class="c-profile-slider__image">
+            <div class="swiper-container">
+              <div class="swiper-wrapper">
+                {% for slider in sliders %}
+                  <div class="swiper-slide">
+                    <img
+                      class="lazyload"
+                      src="{{ placeholderImage(650, 830) }}"
+                      data-src="{{ slider.image.src|resizeDynamic(650, 830) }}"
+                      data-sizes="auto"
+                      alt="{{ slider.image.alt|e }}"
+                    />
+                  </div>
+                {% endfor %}
+              </div>
+              <div class="c-profile-slider__info">
+                <div class="c-profile-slider__button-next">
+                  <svg viewBox="-490 736.4 120.4 57.8"><path d="M-490,765l2.4-2.4v-0.8h0.8l25.4-25.4l4.2,4.2l-21.2,21.2h108.8v6h-109.8l22.2,22.2l-4.2,4.2l-28.6-28.6l0.3-0.3L-490,765z"/></svg>
+                </div>
+                <div class="c-profile-slider__pagination"></div>
+                <div class="c-profile-slider__button-prev">
+                  <svg viewBox="-245 368.2 120.4 57.8"><path d="M-124.6,397.4l-2.4,2.4v0.8h-0.8l-25.4,25.4l-4.2-4.2l21.2-21.2H-245v-6h109.8l-22.2-22.2l4.2-4.2l28.6,28.6l-0.3,0.3L-124.6,397.4z"/></svg>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="c-profile-slider__content">
+            <div class="swiper-container">
+              <div class="swiper-wrapper">
+                {% for slider in sliders %}
+                  <div class="swiper-slide">
+                    <div class="c-profile-slider__content-inner">
+                      <h3>{{ slider.title|e('wp_kses_post') }}</h3>
+                      <h2>{{ slider.name|e('wp_kses_post') }}</h2>
+                      {{ slider.content|e('wp_kses_post') }}
+                    </div>
+                  </div>
+                {% endfor %}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

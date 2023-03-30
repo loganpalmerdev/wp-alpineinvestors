@@ -1,0 +1,53 @@
+<div class="c-story-portfolio__inner">
+    <div class="c-story-portfolio__top-label">Portfolio Spotlight</div>
+    <div class="c-story-portfolio__avatar">
+        <img
+            class="lazyload"
+            src="{{ placeholderImage(post.meta('avatar').width / 2, post.meta('avatar').height / 2) }}"
+            data-src="{{ post.meta('avatar').src|resizeDynamic(post.meta('avatar').width / 2, post.meta('avatar').height / 2) }}"
+            data-srcset="{{ post.meta('avatar').src|resizeDynamic(post.meta('avatar').width / 2, post.meta('avatar').height / 2) }} 1x, {{ post.meta('avatar').src|resizeDynamic(post.meta('avatar').width, post.meta('avatar').height) }} 2x"
+            data-sizes="auto"
+            alt="{{ post.meta('avatar').alt|e }}"
+        />
+    </div>
+    <div class="c-story-portfolio__meta-list">
+        <div class="c-story-portfolio__meta-item">
+            <div class="c-story-portfolio__meta-item-inner">
+                <div class="c-story-portfolio__meta-label">Year of Investment</div>
+                <div class="c-story-portfolio__meta-info">{{ post.meta('year_of_investment') }}</div>
+            </div>
+        </div>
+        <div class="c-story-portfolio__meta-item">
+            <div class="c-story-portfolio__meta-item-inner">
+                <div class="c-story-portfolio__meta-label">Portfolio Status</div>
+                <div class="c-story-portfolio__meta-info">{{ post.meta('portfolio_status') }}</div>
+            </div>
+        </div>
+        <div class="c-story-portfolio__meta-item">
+            <div class="c-story-portfolio__meta-item-inner">
+                <div class="c-story-portfolio__meta-label">CEO</div>
+                <div class="c-story-portfolio__meta-info">{{ post.meta('ceo') }}</div>
+            </div>
+        </div>
+        <div class="c-story-portfolio__meta-item">
+            <div class="c-story-portfolio__meta-item-inner">
+                <div class="c-story-portfolio__meta-label">Headquarters</div>
+                <div class="c-story-portfolio__meta-info">{{ post.meta('headquarters') }}</div>
+            </div>
+        </div>
+        <div class="c-story-portfolio__meta-item">
+            <div class="c-story-portfolio__meta-item-inner">
+                <div class="c-story-portfolio__meta-label">Website</div>
+                <div class="c-story-portfolio__meta-info"><a href="{{ post.meta('website').url }}">{{ post.meta('website').title }}</a></div>
+            </div>
+        </div>
+        <div class="c-story-portfolio__meta-item">
+            <div class="c-story-portfolio__meta-item-inner">
+                <div class="c-story-portfolio__meta-label">Industry</div>
+                <div class="c-story-portfolio__meta-info">{{ post.meta('industry') }}</div>
+            </div>
+        </div>
+    </div>
+    <div class="c-story-portfolio__description-label">Description</div>
+    <div class="c-story-portfolio__description o-single-story-portfolio-content">{{ post.meta('content') }}</div>
+</div>

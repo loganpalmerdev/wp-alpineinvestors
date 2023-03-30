@@ -1,0 +1,258 @@
+.c-slider {
+  margin-top: 150px;
+}
+
+.c-slider__title {
+  margin-bottom: -52px;
+  position: relative;
+  z-index: 2;
+
+  h2 {
+    color: $color-black;
+    font-size: 96px;
+    font-weight: $font-weight-normal;
+    letter-spacing: -2.4px;
+    line-height: 0.83;
+    text-transform: uppercase;
+  }
+}
+
+.c-slider__row {
+  background-color: $color-blue;
+  margin-left: -240px !important;
+  
+  &:hover {
+    .c-slider__item-image {
+      img {
+        filter: grayscale(0);
+      }
+    }
+  }
+
+  .swiper-wrapper {
+    box-sizing: inherit;
+  }
+}
+
+.c-slider__item-row {
+  display: flex;
+}
+
+.c-slider__item-image {
+  position: relative;
+  width: 75.94827586%;
+
+  &::after {
+    content: '';
+    display: block;
+    padding-top: 63.63636364%;
+    width: 100%;
+  }
+
+  img {
+    bottom: 0;
+    filter: grayscale(1);
+    height: 100%;
+    left: 0;
+    object-fit: cover;
+    object-position: center;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: 0.2s filter ease-out;
+    width: 100%;
+  }
+}
+
+.c-slider__item-content {
+  background-color: $color-blue;
+  padding: 105px 40px 0;
+  width: 24.13793103%;
+
+  p {
+    color: $color-white;
+    font-family: $font-sub-family;
+    font-size: 15px;
+    line-height: 20px;
+  }
+  
+  p+p {
+    margin-top: 20px;
+  }
+  
+  a {
+    color: $color-white;
+    text-decoration: underline;
+  }
+}
+
+.c-slider__info {
+  align-items: center;
+  bottom: 45px;
+  display: flex;
+  padding-left: 30px;
+  position: absolute;
+  right: 0;
+  width: 24.13793103%;
+  z-index: 1;
+}
+
+.c-slider__button-next {
+  cursor: pointer;
+  display: flex;
+  height: 27px;
+  overflow: hidden;
+  width: 50px;
+  
+  &:hover {
+    svg {
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+  svg {
+    fill: $color-white;
+    height: 100%;
+    transform: translate3d(10px, 0, 0);
+    transition: 0.2s transform ease-out;
+    width: 100%;
+  }
+}
+
+.c-slider__button-prev {
+  cursor: pointer;
+  display: flex;
+  height: 27px;
+  overflow: hidden;
+  width: 50px;
+
+  &:hover {
+    svg {
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+  svg {
+    fill: $color-white;
+    height: 100%;
+    transform: translate3d(-10px, 0, 0);
+    transition: 0.2s transform ease-out;
+    width: 100%;
+  }
+}
+
+.c-slider__pagination {
+  padding: 0 28px;
+
+  &.swiper-pagination-fraction {
+    color: $color-black;
+    font-size: 12px;
+    font-weight: $font-weight-semibold;
+    letter-spacing: 0.3px;
+    line-height: 20px;
+    width: auto;
+
+    .swiper-pagination-current {
+      color: $color-white;
+    }
+  }
+}
+
+@media (max-width : 1400px) {
+  .c-slider__row {
+    margin-left: -150px !important;
+  }
+}
+
+@media (max-width : 1300px) {
+  .c-slider__row {
+    margin: 0 -90px !important;
+  }
+}
+
+@media (max-width : 1180px) {
+  .c-slider__title {
+    margin-bottom: -40px;
+    
+    h2 {
+      font-size: 74px;
+      letter-spacing: -3.7px;
+    }
+  }
+
+  .c-slider__item-content {
+    padding: 35px 25px 0;
+  }
+
+  .c-slider__info {
+    padding-left: 15px;
+  }
+}
+
+@media (max-width : $breakpoint-mobile-start) {
+  .c-slider {
+    margin-top: 70px;
+
+    .container {
+      padding: 0;
+    }
+  }
+
+  .c-slider__item-row {
+    display: block;
+  }
+
+  .c-slider__item-image {
+    width: 100%;
+  }
+
+  .c-slider__item-content {
+    padding: 16px 25px 62px;
+    width: 100%;
+
+    p {
+      font-size: 12px;
+      line-height: 16px;
+    }
+
+    p+p {
+      margin-top: 16px;
+    }
+  }
+
+  .c-slider__title {
+    margin-bottom: -22px;
+    padding-left: 25px;
+    width: 100%;
+
+    h2 {
+      font-size: 40px;
+      letter-spacing: -1px;
+    }
+  }
+
+  .c-slider__info {
+    bottom: 17px;
+    justify-content: center;
+    padding-left: 0;
+    width: 100%;
+  }
+
+  .c-slider__button-next {
+    height: 19px;
+    width: 38px;
+  }
+
+  .c-slider__button-prev {
+    height: 19px;
+    width: 38px;
+  }
+
+  .c-slider__pagination {
+    padding: 0 18px;
+  }
+
+  .c-slider__row {
+    margin: 0 !important;
+  }
+}

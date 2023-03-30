@@ -1,0 +1,20 @@
+.c-block-text {
+  margin-top: 60px;
+
+  p {
+    color: $color-black;
+    font-family: $font-sub-family;
+    font-size: 18px;
+    line-height: 1.67;
+  }
+}
+
+@media (max-width : $breakpoint-mobile-start) {
+  .c-block-text {
+    margin-top: 40px;
+
+    p {
+      font-size: 12px;
+    }
+  }
+}

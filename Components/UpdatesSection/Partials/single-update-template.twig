@@ -1,0 +1,29 @@
+<div class="single-update__header-row">
+  <div class="single-update__header-left">
+    <div class="single-update__header-md">{{ post.date|date("m/d/Y") }}</div>
+    <div class="single-update__header-dt">{{ post.date|date("m/d") }}</div>
+    <div class="single-update__header-db">{{ post.date|date("Y") }}</div>
+    <div class="single-update__header-cp">{{ post.date_caption|e('wp_kses_post') }}</div>
+  </div>
+  <div class="single-update__header-right">
+    <h1>{{ post.title|e('wp_kses_post') }}</h1>
+  </div>
+</div>
+<div class="single-update__image">
+  <img
+    class="lazyload"
+    src="{{ placeholderImage(post.thumbnail.width, post.thumbnail.height) }}"
+    data-src="{{ post.thumbnail.src|resizeDynamic(post.thumbnail.width, post.thumbnail.height) }}"
+    data-sizes="auto"
+    alt="{{ post.thumbnail.alt|e('wp_kses_post') }}"
+  />
+</div>
+<div class="single-story-popup-content-info-row">
+  <div class="single-story-popup-content-info-social-share">
+    <div class="single-story-popup-content-info-social-share-item">Share:</div>
+    <div class="single-story-popup-content-info-social-share-item"><a href="#">Facebook</a></div>
+    <div class="single-story-popup-content-info-social-share-item"><a href="#">Twitter</a></div>
+    <div class="single-story-popup-content-info-social-share-item"><a href="#">Linkedin</a></div>
+  </div>
+  <div class="single-story-popup-content-info-content o-single-story-content">{{ post.content }}</div>
+</div>

@@ -1,0 +1,18 @@
+{% if prev_post_1 or prev_post_2 %}
+  <div class="c-single-story-nav">
+    <div class="c-single-story-nav__inner">
+      <div class="c-single-story-nav__row">
+        {% if prev_post_1 %}
+          <div class="c-single-story-nav__col">
+            {% include 'Partials/story-nav-card.twig' ignore missing with {story: prev_post_1} only %}
+          </div>
+        {% endif %}
+        {% if prev_post_2 %}
+          <div class="c-single-story-nav__col">
+            {% include 'Partials/story-nav-card.twig' ignore missing with {story: prev_post_2} only %}
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+{% endif %}

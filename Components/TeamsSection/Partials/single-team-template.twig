@@ -1,0 +1,111 @@
+<div class="c-single-team__header-row">
+  <div class="c-single-team__header-right">
+    <h1>{{ post.meta('display_name') }}</h1>
+    <p>{{ post.meta('role') }}</p>
+  </div>
+  <div class="c-single-team__header-left">
+    {% if post.meta('avatar_1') and post.meta('avatar_2') %}
+      <div class="jsSingleTeamAvatarDouble c-single-team__avatar-1">
+        <img
+          class="lazyload"
+          src="{{ placeholderImage(320, 420) }}"
+          data-src="{{ post.meta('avatar_1').src|resizeDynamic(320, 420) }}"
+          data-srcset="{{ post.meta('avatar_1').src|resizeDynamic(320, 420) }} 1x, {{ post.meta('avatar_1').src|resizeDynamic(640, 840) }} 2x"
+          data-sizes="auto"
+          alt="{{ post.meta('avatar_1').alt|e }}"
+        />
+      </div>
+      <div class="jsSingleTeamAvatarDouble c-single-team__avatar-2">
+        <img
+          class="lazyload"
+          src="{{ placeholderImage(320, 420) }}"
+          data-src="{{ post.meta('avatar_2').src|resizeDynamic(320, 420) }}"
+          data-srcset="{{ post.meta('avatar_2').src|resizeDynamic(320, 420) }} 1x, {{ post.meta('avatar_2').src|resizeDynamic(640, 840) }} 2x"
+          data-sizes="auto"
+          alt="{{ post.meta('avatar_2').alt|e }}"
+        />
+      </div>
+    {% elseif post.meta('avatar_1') %}
+      <div class="c-single-team__avatar">
+        <img
+          class="lazyload"
+          src="{{ placeholderImage(320, 420) }}"
+          data-src="{{ post.meta('avatar_1').src|resizeDynamic(320, 420) }}"
+          data-srcset="{{ post.meta('avatar_1').src|resizeDynamic(320, 420) }} 1x, {{ post.meta('avatar_1').src|resizeDynamic(640, 840) }} 2x"
+          data-sizes="auto"
+          alt="{{ post.meta('avatar_1').alt|e }}"
+        />
+      </div>
+    {% else %}
+      <div class="c-single-team__avatar">
+        <img
+          class="lazyload"
+          src="{{ placeholderImage(320, 420) }}"
+          data-src="{{ post.meta('avatar_2').src|resizeDynamic(320, 420) }}"
+          data-srcset="{{ post.meta('avatar_2').src|resizeDynamic(320, 420) }} 1x, {{ post.meta('avatar_2').src|resizeDynamic(640, 840) }} 2x"
+          data-sizes="auto"
+          alt="{{ post.meta('avatar_2').alt|e }}"
+        />
+      </div>
+    {% endif %}
+  </div>
+</div>
+{% if post.meta('description') %}
+  <div class="c-single-team__description">
+    {{ post.meta('description') }}
+  </div>
+{% endif %}
+{% if post.meta('link') %}
+  <div class="c-single-team__link">
+    <a href="{{ post.meta('link').url }}">{{ post.meta('link').title }}</a>
+  </div>
+{% endif %}
+{% if post.meta('first_job') or post.meta('favorite_activity') or post.meta('proudest_moment') or post.meta('most_admired_giant_of_business') %}
+  <div class="c-single-team__meta-row">
+    {% if post.meta('first_job') %}
+      <div class="c-single-team__meta-item">
+        <div class="c-single-team__meta-item-inner">
+          <div class="c-single-team__meta-label">First Job</div>
+          <div class="c-single-team__meta-info">{{ post.meta('first_job') }}</div>
+        </div>
+      </div>
+    {% endif %}
+    {% if post.meta('favorite_activity') %}
+      <div class="c-single-team__meta-item">
+        <div class="c-single-team__meta-item-inner">
+          <div class="c-single-team__meta-label">Favorite activity</div>
+          <div class="c-single-team__meta-info">{{ post.meta('favorite_activity') }}</div>
+        </div>
+      </div>
+    {% endif %}
+    {% if post.meta('proudest_moment') %}
+      <div class="c-single-team__meta-item">
+        <div class="c-single-team__meta-item-inner">
+          <div class="c-single-team__meta-label">Proudest Moment</div>
+          <div class="c-single-team__meta-info">{{ post.meta('proudest_moment') }}</div>
+        </div>
+      </div>
+    {% endif %}
+    {% if post.meta('most_admired_giant_of_business') %}
+      <div class="c-single-team__meta-item">
+        <div class="c-single-team__meta-item-inner">
+          <div class="c-single-team__meta-label">Most Admired "Giant" of Business</div>
+          <div class="c-single-team__meta-info">{{ post.meta('most_admired_giant_of_business') }}</div>
+        </div>
+      </div>
+    {% endif %}
+    {% if post.meta('favorite_quote') %}
+      <div class="c-single-team__meta-item-full">
+        <div class="c-single-team__meta-item-inner--no-border">
+          <div class="c-single-team__meta-label">Favorite Quote</div>
+          <div class="c-single-team__meta-quote">{{ post.meta('favorite_quote') }}</div>
+        </div>
+      </div>
+    {% endif %}
+  </div>
+{% endif %}
+{% if post.meta('legal_copy') %}
+  <div class="c-single-team__legal-copy">
+    {{ post.meta('legal_copy') }}
+  </div>
+{% endif %}

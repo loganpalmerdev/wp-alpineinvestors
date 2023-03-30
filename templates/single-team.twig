@@ -1,0 +1,6 @@
+{% extends 'templates/_document.twig' %}
+
+{% block content %}
+    {{ renderComponent('BlockHeroText', {'title': hero_title,'sub_title': hero_sub_title, 'content': hero_content}) }}
+    {{ renderComponent('TeamsSection', {'is_single_team': true, 'teams_page': teams_page}) }}
+{% endblock %}

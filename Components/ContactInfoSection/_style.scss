@@ -1,0 +1,121 @@
+.c-contact-info {
+  margin-top: 60px;
+}
+
+.c-contact-info__row {
+  display: flex;
+  margin: 0 -20px;
+}
+
+.c-contact-info__left {
+  padding: 0 20px;
+  width: 60%;
+}
+
+.c-contact-info__right {
+  padding: 0 20px;
+  width: 40%;
+}
+
+.c-contact-info__card {
+  padding: 15px 0;
+}
+
+.c-contact-info__card+.c-contact-info__card {
+  border-top: 1px solid #cccecf;
+}
+
+.c-contact-info__card-des {
+  color: $color-gray-light;
+  font-size: 12px;
+  font-weight: $font-weight-semibold;
+  letter-spacing: 0.3px;
+  line-height: 1.67;
+  text-transform: uppercase;
+}
+
+.c-contact-info__card-val {
+  font-size: 24px;
+  letter-spacing: -1.2px;
+  line-height: 1.25;
+  margin-top: 3px;
+  text-transform: uppercase;
+
+  &:hover {
+    a {
+      color: $color-blue;
+    }
+  }
+  
+  a {
+    color: $color-black;
+    transition: 0.2s color ease-out;
+  }
+}
+
+.c-map-row {
+  height: 0;
+  margin-left: -240px;
+  margin-top: 100px;
+  overflow: hidden;
+  padding-bottom: 56.25%;
+  position: relative;
+
+  iframe {
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+}
+
+@media (max-width : 1400px) {
+  .c-map-row {
+    margin-left: -150px;
+  }
+}
+
+@media (max-width : $breakpoint-tablet-start) {
+  .c-map-row {
+    margin-left: -90px;
+  }
+}
+
+@media (max-width : $breakpoint-mobile-start) {
+  .c-map-row {
+    margin-left: 0;
+  }
+}
+
+@media (max-width : $breakpoint-mobile-end) {
+  .c-contact-info {
+    margin-top: 30px;
+  }
+  
+  .c-contact-info__row {
+    display: block;
+    margin: 0;
+  }
+  
+  .c-contact-info__left {
+    padding: 0;
+    width: 100%;
+  }
+  
+  .c-contact-info__right {
+    border-top: 1px solid #cccecf;
+    padding: 0;
+    width: 100%;
+  }
+  
+  .c-contact-info__card-des {
+    font-size: 8px;
+    line-height: 1.5;
+  }
+  
+  .c-contact-info__card-val {
+    font-size: 16px;
+    letter-spacing: 0;
+  }
+}

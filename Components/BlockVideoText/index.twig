@@ -1,0 +1,30 @@
+<section class="c-block-video-text">
+    <div class="container-outter">
+        <div class="container-wrapper">
+            <div class="container">
+                <div class="c-block-video-text__row">
+                    <div class="c-block-video-text__col">
+                        <p>{{ text|e('wp_kses_post') }}</p>
+                    </div>
+                    <div class="c-block-video-text__col">
+                        <div class="c-block-video-text__image">
+                            <div class="c-block-video-text__image-btn">
+                                <svg viewBox="-145 237 320 320">
+                                    <path fill="#ffffff" d="M15,557c-88.4,0-160-71.6-160-160c0-88.4,71.6-160,160-160s160,71.6,160,160C175,485.4,103.4,557,15,557zM15,245c-83.9,0-152,68.1-152,152s68.1,152,152,152c83.9,0,152-68.1,152-152S98.9,245,15,245z M-27,347l120,50l-120,50C-27,447-27,347-27,347z"/>
+                                </svg>
+                            </div>
+                            <img
+                                class="lazyload"
+                                src="{{ placeholderImage(640, 350) }}"
+                                data-src="{{ video_overlay_image.src|resizeDynamic(640, 350) }}"
+                                data-sizes="auto"
+                                alt="{{ video_overlay_image.alt|e }}"
+                            />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<div class="jsBlockVideoTextHidden">{{ video }}</div>

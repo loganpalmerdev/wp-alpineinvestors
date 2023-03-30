@@ -1,0 +1,25 @@
+<div class="single-story-popup-content-header-row">
+  <div class="single-story-popup-content-header-title">
+    <p>{{ post.meta('role') }}</p>
+    <h1>{{ post.title }}</h1>
+  </div>
+  <div class="single-story-popup-content-header-image">
+    <img
+      class="lazyload"
+      src="{{ placeholderImage(780, 980) }}"
+      data-src="{{ post.meta('avatar').src|resizeDynamic(780, 980) }}"
+      data-srcset="{{ post.meta('avatar').src|resizeDynamic(780, 980) }} 1x, {{ post.meta('avatar').src|resizeDynamic(1560, 1960) }} 2x"
+      data-sizes="auto"
+      alt="{{ post.meta('avatar').alt|e }}"
+    />
+  </div>
+</div>
+<div class="single-story-popup-content-info-row">
+  <div class="single-story-popup-content-info-social-share">
+    <div class="single-story-popup-content-info-social-share-item">Share:</div>
+    <div class="single-story-popup-content-info-social-share-item"><a href="{{ post.meta('facebook_url')|e }}">Facebook</a></div>
+    <div class="single-story-popup-content-info-social-share-item"><a href="{{ post.meta('twitter_url')|e }}">Twitter</a></div>
+    <div class="single-story-popup-content-info-social-share-item"><a href="{{ post.meta('linkedin_url')|e }}">Linkedin</a></div>
+  </div>
+  <div class="single-story-popup-content-info-content o-single-story-content">{{ post.meta('content') }}</div>
+</div>

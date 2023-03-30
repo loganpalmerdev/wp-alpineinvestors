@@ -1,0 +1,137 @@
+footer {
+  padding: 90px 0 60px;
+}
+
+.footer-fixed {
+  backface-visibility: hidden;
+  bottom: 0;
+  left: 0;
+  opacity: 0;
+  position: fixed;
+  right: 0;
+  transition: 0.2s opacity ease-out;
+  width: 100%;
+  will-change: transform;
+  z-index: 10;
+}
+
+.footer-widget-row {
+  display: flex;
+  font-size: 12px;
+  font-weight: $font-weight-semibold;
+  justify-content: space-between;
+  letter-spacing: 0.25px;
+  line-height: 1.67;
+  margin-top: 50px;
+}
+
+.footer-widget-col {
+  
+  @media (min-width : 1300px) {
+    width: 14.28571429%;
+  }
+
+  a {
+    color: $color-blue;
+    display: inline-block;
+    position: relative;
+    text-transform: uppercase;
+
+    &::after,
+    &::before {
+      background-color: $color-blue;
+      bottom: -2px;
+      content: '';
+      height: 2px;
+      position: absolute;;
+    }
+
+    &::after {
+      right: 0;
+      width: 100%;
+    }
+
+    &::before {
+      left: 0;
+      width: 0;
+    }
+
+    &:hover {
+      &::after {
+        transition: 0.2s width ease-out;
+        width: 0;
+      }
+
+      &::before {
+        transition: 0.2s width 0.2s ease-out;
+        width: 100%;
+      }
+    }
+  }
+
+  .widget_nav_menu {
+    li+li {
+      margin-top: 10px;
+    }
+  }
+}
+
+.footer-widget-col-copyright {
+  p {
+    color: $color-gray-dark;
+  }
+}
+
+.footer-widget-col-address {
+  a {
+    &::before,
+    &::after {
+      display: none;
+    }
+
+    &:hover {
+      span {
+        &::after {
+          transition: 0.2s width ease-out;
+          width: 0;
+        }
+
+        &::before {
+          transition: 0.2s width 0.2s ease-out;
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  span {
+    display: inline-block;
+    position: relative;
+
+    &::after,
+    &::before {
+      background-color: $color-blue;
+      bottom: -2px;
+      content: '';
+      height: 2px;
+      position: absolute;;
+    }
+
+    &::after {
+      right: 0;
+      width: 100%;
+    }
+
+    &::before {
+      left: 0;
+      width: 0;
+    }
+  }
+}
+
+
+@media (max-width : $breakpoint-mobile-start) {
+  footer {
+    display: none;
+  }
+}

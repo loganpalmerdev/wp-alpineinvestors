@@ -1,0 +1,32 @@
+<section class="block-hero-text-section">
+    <div class="wide-container">
+        <div class="block-hero-text-title">
+            <h1>{{ title|e('wp_kses_post') }}</h1>
+            {% if sub_title %}
+                <h2>{{ sub_title|e('wp_kses_post') }}</h2>
+            {% endif %}
+        </div>
+    </div>
+    {% if content %}
+        <div class="container-outter">
+            <div class="container-wrapper">
+                <div class="container">
+                    <div class="block-hero-text-content-row">
+                        <div class="block-hero-text-content">
+                            {{ content|e('wp_kses_post') }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endif %}
+</section>
+{% if navigators %}
+    <div class="block-hero-text-link">
+        <ul>
+            {% for navigator in navigators %}
+                <li><a href="{{ navigator.section_id }}">{{ navigator.title }}</a></li>                    
+            {% endfor %}
+        </ul>
+    </div>
+{% endif %}

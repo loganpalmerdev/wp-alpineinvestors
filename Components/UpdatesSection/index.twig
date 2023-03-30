@@ -1,0 +1,39 @@
+<section class="c-search">
+  <div class="container-outter">
+    <div class="container-wrapper">
+      <div class="container">
+        <div class="c-update__search">
+          <div class="c-update__dropdown">
+            <div class="c-update__dropdown-label">Show:</div>
+            <div class="c-update__dropdown-value">
+              <div class="c-update__dropdown-value-txt">All Updates</div>
+              <div class="c-update__dropdown-list hide">
+                <div class="c-update__dropdown-item active" data-term-id="0">All updates</div>
+                {% for term in update_category_terms %}
+                  <div class="c-update__dropdown-item" data-term-id="{{ term.id }}">{{ term.name }}</div>
+                {% endfor %}
+              </div>
+            </div>
+          </div>
+        </div>
+        {% for update in updates %}
+          {% include 'Partials/update-card.twig' ignore missing with {update: update} only %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+<div class="c-search__load-spinner hide jsUpdatesSearchLoadSpinner"></div>
+<div class="c-search__popup jsUpdatesSearchPopup" data-nonce="{{ get_single_update_nonce }}" {% if is_single_update %} data-is-single-update="yes" {% endif %}>
+  <div class="c-search__popup-mask"></div>
+  <div class="c-search__single__popup-wrapper jsUpdatesSearchSinglePopupWrapper">
+    <div class="c-search__single__popup-close-btn jsUpdatesSearchSinglePopupCloseBtn" data-current-page-url="{{ updates_page_url }}"></div>
+    <div class="c-search__single__popup-content jsUpdatesSearchSinglePopupContent">
+      <div class="c-search__single__popup-content-inner jsSingleUpdatePopupContentInner">
+        {% if is_single_update %}
+          {% include 'Partials/single-update-template.twig' ignore missing with {is_single_update: is_single_update, post: post} only %}
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>

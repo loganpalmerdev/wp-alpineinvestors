@@ -1,0 +1,101 @@
+<section class="c-search">
+  <div class="container-outter">
+    <div class="container-wrapper">
+      <div class="container">
+        <div class="c-search__key-row jsStoriesSearchKeyRow hidden">
+          <div class="c-search__key jsStoriesSearchKey">
+            <h2>Filter : <span>ALL</span></h2>
+            <div class="c-search__key-dots">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </div>
+        </div>
+        <div class="c-search__key-mobile-row jsStoriesSearchKeyMobileRow hide">
+          <h2>Search results for <span>“Leadership”</span></h2>
+        </div>
+        <div class="c-search__row">
+          <div class="c-search__filter-col jsStoriesSearchFilterCol">
+            <div class="c-search__filter-close-btn jsStoriesSearchFilterCloseBtn"></div>
+            <div class="c-search__filter-inner">
+              <div class="c-search__filter-header">
+                <div class="c-search__filter-title">
+                  <h2>FILTER</h2>
+                </div>
+                <div class="c-search__filter-reset-btn jsStoriesSearchFilterResetBtn hidden">
+                  <button>CLEAR</button>
+                </div>
+              </div>
+              <div class="c-search__taxonomy-list">
+                <h3>STORY TYPE:</h3>
+                <ul>
+                  <li>
+                    <label>ALL<input type="radio" name="story-type-term" value="-1" checked><span class="checkmark"></span></label>
+                  </li>
+                  {% for term in story_type_terms %}
+                    <li>
+                      <label>{{ term.name }}<input type="radio" name="story-type-term" value="{{ term.id }}"><span class="checkmark"></span></label>
+                    </li>
+                  {% endfor %}
+                </ul>
+              </div>
+              <div class="c-search__taxonomy-list">
+                <h3>SECTOR:</h3>
+                <ul>
+                  <li>
+                    <label>ALL<input type="radio" name="story-sector-term" value="-1" checked><span class="checkmark"></span></label>
+                  </li>
+                  {% for term in story_sector_terms %}
+                    <li>
+                      <label>{{ term.name }}<input type="radio" name="story-sector-term" value="{{ term.id }}"><span class="checkmark"></span></label>
+                    </li>
+                  {% endfor %}
+                </ul>
+              </div>
+              <div class="c-search__filter-form jsStoriesSearchFilterForm">
+                <form>
+                  <input type="text" placeholder="Search by keyword">
+                  <input type="submit" value="">
+                </form>
+              </div>
+            </div>
+          </div>
+          <div class="c-search__result-col">
+            <div class="c-search__story-row jsSearchStoryRow">
+              {% for story in stories %}
+                {% include 'Partials/story-card.twig' ignore missing with {story: story} only %}
+              {% endfor %}
+            </div>
+            <div class="o-stories__load-btn jsStoriesLoadBtn {% if page >= page_counts %} hide {% endif %}" data-posts-per-page="{{ posts_per_page }}" data-nonce="{{ nonce }}" data-page="{{ page }}" data-page-counts="{{ page_counts }}" data-story-type="-1" data-story-sector="-1" data-story-search-key="">
+              <button>LOAD MORE</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="c-search__load-spinner jsStoriesSearchLoadSpinner hide"></div>
+<div class="c-search__popup jsStoriesSearchPopup" data-nonce="{{ get_single_story_nonce }}" {% if is_single_story %} data-is-single-story="yes" {% endif %}>
+  <div class="c-search__popup-mask"></div>
+  <div class="c-search__single__popup-wrapper jsStoriesSearchSinglePopupWrapper">
+    <div class="c-search__single__popup-close-btn jsStoriesSearchSinglePopupCloseBtn" data-current-page-url="{{ stories_page_url }}"></div>
+    <div class="c-search__single__popup-content jsStoriesSearchSinglePopupContent">
+      <div class="jsSingleStoryPopupContentInner c-search__single__popup-content-inner">
+        {% if is_single_story %}
+          {% if post.meta('template') == 'portfolio-spotlight' %}
+            {% include 'Partials/single-story-portfolio-spotlight-template.twig' ignore missing with {is_single_story: is_single_story, post: post} only %}
+          {% else %}
+            {% include 'Partials/single-story-leadership-template.twig' ignore missing with {is_single_story: is_single_story, post: post} only %}
+          {% endif %}
+        {% endif %}
+      </div>
+      <div class="jsSingleStoryNavWrapper c-single-story-nav__wrapper">
+        {% if is_single_story %}
+          {% include 'Partials/single-story-navigation.twig' ignore missing with {prev_post_1: post.prev, prev_post_2: post.next} only %}
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>

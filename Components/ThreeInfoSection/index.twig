@@ -1,0 +1,63 @@
+<section class="c-three-info">
+    <div class="container-outter">
+        <div class="container-wrapper">
+            <div class="container">
+                <div class="c-three-info__row">
+                    <div class="c-three-info__left">
+                        <div class="c-three-info__left-inner">
+                            <div class="jsThreeInfoLeftImage c-three-info__left-img-1">
+                                <img
+                                    class="lazyload"
+                                    src="{{ placeholderImage(630, 850) }}"
+                                    data-src="{{ image_1.src|resizeDynamic(630, 850) }}"
+                                    data-sizes="auto"
+                                    alt="{{ image_1.alt|e }}"
+                                />
+                            </div>
+                            <div class="jsThreeInfoLeftImage c-three-info__left-img-2">
+                                <img
+                                    class="lazyload"
+                                    src="{{ placeholderImage(630, 850) }}"
+                                    data-src="{{ image_2.src|resizeDynamic(630, 850) }}"
+                                    data-sizes="auto"
+                                    alt="{{ image_2.alt|e }}"
+                                />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="c-three-info__right">
+                        <div class="c-three-info__title">{{ title|e('wp_kses_post') }}</div>
+                        <div class="c-three-info__right-inner">
+                            <div class="c-three-info__detail-row">
+                                <div class="c-three-info__detail-col">
+                                    <div class="c-three-info__value">
+                                        {{ sub_value_1|e('wp_kses_post') }}
+                                    </div>
+                                    <div class="c-three-info__name">
+                                        {{ sub_title_1|e('wp_kses_post') }}
+                                    </div>
+                                </div>
+                                <div class="c-three-info__detail-col">
+                                    <div class="c-three-info__value">
+                                        {{ sub_value_2|e('wp_kses_post') }}
+                                    </div>
+                                    <div class="c-three-info__name">
+                                        {{ sub_title_2|e('wp_kses_post') }}
+                                    </div>
+                                </div>
+                                <div class="c-three-info__detail-col">
+                                    <div class="c-three-info__value">
+                                        {{ sub_value_3|e('wp_kses_post') }}
+                                    </div>
+                                    <div class="c-three-info__name">
+                                        {{ sub_title_3|e('wp_kses_post') }}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

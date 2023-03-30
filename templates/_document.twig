@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html class="html {{ body_class }}" lang="{{ site.language }}">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="alternate" type="application/rss+xml" title="{{ site.title }} {{ __('Feed', 'flynt') }}" href="{{ site.rss2 | e('esc_url') }}">
+
+    {{ function('wp_head') }}
+
+    {% if website_scripts.run_tracking_scripts %}
+      {{ website_scripts.before_head_closing_tag }}
+    {% endif %}
+  </head>
+  <body>
+    {% if website_scripts.run_tracking_scripts %}
+      {{ website_scripts.after_body_opening_tag }}
+    {% endif %}
+
+    {% block header %}
+      {{ renderComponent('SiteHeader') }}
+    {% endblock %}
+
+    <div id="content-wrapper" class="content-wrapper {% if post.header_menu_open or remove_content_padding %} remove-padding {% endif %} {% if post.footer_fix or post_footer_fix %} content-wrapper-overlay-footer {% endif %}">
+      <div class="content-wrapper-inner"></div>
+      {% block content %}
+        No <code>{{ '{% block content %}' }}</code> defined for this template.
+      {% endblock %}
+      <div id="content-wrapper-end-detect"></div>
+    </div>
+
+    {% block footer %}
+      {{ renderComponent('SiteFooter') }}
+    {% endblock %}
+    
+    {{ function('wp_footer') }}
+    
+    <div class="c-block-video-text-popup hide">
+      <div class="c-block-video-text-popup__close-btn"></div>
+      <div class="c-block-video-text-popup__video">
+          <div class="jsBlockVideoTextPopupVideoWrapper"></div>
+      </div>
+    </div>
+
+    {% if website_scripts.run_tracking_scripts %}
+      {{ website_scripts.begore_body_closing_tag }}
+    {% endif %}
+  </body>
+</html>

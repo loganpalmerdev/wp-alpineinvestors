@@ -1,0 +1,17 @@
+<section class="c-block-two-columns-text">
+    <div class="container-outter">
+        <div class="container-wrapper">
+            <div class="container">
+                <h2>{{ title|e('wp_kses_post') }}</h2>
+                <div class="c-block-two-columns-text__row">
+                    <div class="c-block-two-columns-text__col">
+                        {{ left_content|e('wp_kses_post') }}
+                    </div>
+                    <div class="c-block-two-columns-text__col">
+                        {{ right_content|e('wp_kses_post') }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

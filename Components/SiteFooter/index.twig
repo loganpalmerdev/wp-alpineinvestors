@@ -1,0 +1,45 @@
+<footer id="footer-section" {% if post.footer_fix or post_footer_fix %} class="footer-fixed" {% endif %}>
+  <div class="wide-container">
+    <div class="footer-logo">
+      <img src="{{ logo.src }}" alt="{{ logo.alt }}">
+    </div>
+  </div>
+  <div class="wide-container">
+    <div class="footer-widget-row">
+      <div class="footer-widget-col footer-widget-col-copyright">
+        <p>ALPINE INVESTORS <br/>COPYRIGHT {{ year }}, <br/>ALL RIGHTS RESERVED</p>
+      </div>
+      <div class="footer-widget-col">{{ footer_widget_1 }}</div>
+      <div class="footer-widget-col">{{ footer_widget_2 }}</div>
+      <div class="footer-widget-col footer-widget-col-address">
+        <a href="{{ address_google_map_url }}" target="_blank">
+          <div>
+            <span>{{ address }},</span>
+          </div>
+          <div>
+            <span>{{ city }}</span>
+          </div>
+          <div>
+            <span>{{ state }}</span>
+          </div>
+          <div>
+            <span>{{ zip }}</span>
+          </div>
+        </a>
+      </div>
+      <div class="footer-widget-col">
+        <div class="widget_nav_menu">
+          <ul>
+            <li>
+              <a href="mailto:{{ email }}">Email</a>
+            </li>
+            <li>
+              <a href="tel:{{ phone }}">{{ phone }}</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-widget-col">{{ footer_widget_3 }}</div>
+    </div>
+  </div>
+</footer>

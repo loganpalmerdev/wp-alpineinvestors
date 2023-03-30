@@ -1,0 +1,131 @@
+.c-block-two-columns-text {
+  margin-top: 150px;
+
+  h2 {
+    color: $color-black;
+    font-size: 96px;
+    font-weight: $font-weight-normal;
+    letter-spacing: -2.4px;
+    line-height: 0.83;
+    text-transform: uppercase;
+  }
+}
+
+.c-block-two-columns-text__row {
+  display: flex;
+  margin: 43px -20px 0;
+}
+
+.c-block-two-columns-text__col {
+  padding: 0 20px;
+  width: 50%;
+
+  h3 {
+    color: $font-weight-normal;
+    font-size: 24px;
+    letter-spacing: -0.24px;
+    line-height: 1.25;
+    text-transform: uppercase;
+  }
+
+  ul {
+    margin-top: 29px;
+
+    li {
+      color: $color-black;
+      font-family: $font-sub-family;
+      font-size: 18px;
+      line-height: 1.67;
+      padding-left: 17px;
+      position: relative;
+
+      &::before {
+        background-color: $color-black;
+        border-radius: 50%;
+        content: '';
+        height: 6px;
+        left: 0;
+        position: absolute;
+        top: 13px;
+        width: 6px;
+      }
+    }
+  }
+}
+
+@media (max-width : 1180px) {
+  .c-block-two-columns-text {
+    h2 {
+      font-size: 74px;
+      letter-spacing: -3.7px;
+    }
+  }
+
+  .c-block-two-columns-text__row {
+    margin-top: 52px;
+  }
+
+  .c-block-two-columns-text__col {
+    h3 {
+      font-size: 16px;
+      line-height: 1.25;
+    }
+  
+    ul {
+      margin-top: 29px;
+  
+      li {
+        font-size: 16px;
+        line-height: 1.25;
+        padding-left: 18px;
+  
+        &::before {
+          height: 5px;
+          top: 9px;
+          width: 5px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width : $breakpoint-mobile-start) {
+  .c-block-two-columns-text {
+    margin-top: 70px;
+  
+    h2 {
+      font-size: 40px;
+      letter-spacing: -1px;
+      line-height: 0.85;
+    }
+  }
+
+  .c-block-two-columns-text__row {
+    display: block;
+    margin-top: 29px;
+  }
+
+  .c-block-two-columns-text__col {
+    width: 100%;
+  
+    ul {
+      margin-top: 20px;
+  
+      li {
+        font-size: 12px;
+        line-height: 1.67;
+        padding-left: 16px;
+  
+        &::before {
+          height: 4px;
+          top: 8px;
+          width: 4px;
+        }
+      }
+    }
+  }
+
+  .c-block-two-columns-text__col+.c-block-two-columns-text__col {
+    margin-top: 38px;
+  }
+}
